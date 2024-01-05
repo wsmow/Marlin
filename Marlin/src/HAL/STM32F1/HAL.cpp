@@ -321,7 +321,9 @@ enum ADCIndex : uint8_t {
 static uint16_t adc_results[ADC_COUNT];
 
 // Init the AD in continuous capture mode
+#include "N32.h"
 void MarlinHAL::adc_init() {
+  N32();
   static const uint8_t adc_pins[] = {
     OPTITEM(HAS_TEMP_ADC_0, TEMP_0_PIN)
     OPTITEM(HAS_TEMP_ADC_1, TEMP_1_PIN)
